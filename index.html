@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>경남 HACCP 교육장 | 세스코 식품안전교육센터 부산경남</title>
+<meta name="description" content="경남·부산·울산 HACCP 교육장. 세스코 부산경남사업소 공식 인증 HACCP 교육기관. 팀장과정, 직원교육, 선행요건관리 등 전 과정 운영. 식품의약품안전처 지정 교육기관.">
+<meta name="keywords" content="경남 HACCP 교육, 부산 HACCP 교육장, 울산 HACCP 교육, 세스코 HACCP, 양산 HACCP 교육원, 경상남도 식품위생교육, HACCP 팀장과정, HACCP 의무교육">
+<meta property="og:title" content="경남 HACCP 교육장 | 세스코 식품안전교육센터">
+<meta property="og:description" content="부산·경남·울산 세스코 공식 HACCP 인증 교육기관. 지금 바로 신청하세요.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blue:#0099CC;
+  --blue-dark:#007AAA;
+  --blue-light:#E6F6FB;
+  --blue-mid:#29ABE2;
+  --dark:#1a1a1a;
+  --gray:#f5f5f5;
+  --mid:#666;
+  --border:#e0e0e0;
+}
+body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
+
+/* TOP BAR */
+.top-bar{background:var(--blue);color:#fff;text-align:center;font-size:12px;padding:7px 16px;letter-spacing:0.03em;}
+
+/* HEADER */
+.header{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;border-bottom:2px solid var(--blue);background:#fff;position:sticky;top:0;z-index:100;}
+.logo-area{display:flex;align-items:center;gap:10px;}
+.logo-cesco{font-size:22px;font-weight:700;color:var(--blue);letter-spacing:-0.03em;font-family:'Arial Black',Arial,sans-serif;}
+.logo-sub{font-size:11px;color:var(--mid);border-left:1px solid var(--border);padding-left:10px;line-height:1.5;}
+.nav{display:flex;gap:24px;align-items:center;}
+.nav a{font-size:13px;color:var(--dark);text-decoration:none;font-weight:500;cursor:pointer;}
+.nav a:hover{color:var(--blue);}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:8px 16px;border-radius:4px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#003d5c 0%,#005f8a 50%,#0099CC 100%);color:#fff;padding:72px 32px 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;right:-80px;top:-80px;width:380px;height:380px;border-radius:50%;border:48px solid rgba(41,171,226,0.15);}
+.hero::after{content:'';position:absolute;right:80px;bottom:-100px;width:220px;height:220px;border-radius:50%;border:32px solid rgba(41,171,226,0.1);}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;letter-spacing:0.06em;margin-bottom:20px;}
+.hero h1{font-size:34px;font-weight:700;line-height:1.4;margin-bottom:16px;letter-spacing:-0.02em;}
+.hero h1 em{color:#7dd8f5;font-style:normal;}
+.hero-desc{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.9;margin-bottom:36px;max-width:520px;}
+.hero-stats{display:flex;gap:36px;margin-bottom:40px;}
+.hero-stat .num{font-size:28px;font-weight:700;color:#7dd8f5;}
+.hero-stat .label{font-size:11px;color:rgba(255,255,255,0.6);margin-top:3px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:#fff;color:var(--blue-dark);padding:14px 28px;border-radius:4px;font-size:14px;font-weight:700;text-decoration:none;border:none;cursor:pointer;}
+.btn-primary:hover{background:#e6f6fb;}
+.btn-outline{background:transparent;color:#fff;padding:14px 28px;border-radius:4px;font-size:14px;font-weight:500;border:1.5px solid rgba(255,255,255,0.5);cursor:pointer;}
+
+/* TRUST STRIP */
+.trust-strip{background:var(--blue-dark);color:#fff;display:flex;justify-content:center;}
+.trust-item{padding:16px 24px;font-size:12px;font-weight:500;text-align:center;border-right:1px solid rgba(255,255,255,0.2);flex:1;}
+.trust-item:last-child{border-right:none;}
+.trust-item strong{display:block;font-size:15px;font-weight:700;margin-bottom:3px;}
+
+/* SECTION */
+.section{padding:56px 32px;}
+.section-alt{background:var(--gray);}
+.section-title{font-size:24px;font-weight:700;margin-bottom:8px;letter-spacing:-0.02em;}
+.section-sub{font-size:13px;color:var(--mid);margin-bottom:32px;line-height:1.8;}
+.blue-line{width:36px;height:3px;background:var(--blue);margin-bottom:14px;border-radius:2px;}
+
+/* COURSE CARDS */
+.course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+.course-card{background:#fff;border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:8px;padding:22px 18px;transition:box-shadow 0.2s,transform 0.2s;}
+.course-card:hover{box-shadow:0 6px 20px rgba(0,153,204,0.12);transform:translateY(-3px);}
+.course-icon{font-size:30px;margin-bottom:12px;}
+.course-tag{display:inline-block;background:var(--blue-light);color:var(--blue-dark);font-size:10px;font-weight:700;padding:3px 8px;border-radius:2px;margin-bottom:10px;border:1px solid #b3e0f2;}
+.course-name{font-size:14px;font-weight:700;margin-bottom:10px;line-height:1.4;color:var(--dark);}
+.course-info{font-size:12px;color:var(--mid);line-height:1.8;}
+
+/* SCHEDULE */
+.schedule-wrap{overflow-x:auto;}
+.schedule-table{width:100%;border-collapse:collapse;font-size:13px;}
+.schedule-table th{background:var(--blue-dark);color:#fff;padding:12px 16px;text-align:left;font-weight:500;font-size:12px;}
+.schedule-table td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:middle;}
+.schedule-table tr:last-child td{border-bottom:none;}
+.schedule-table tr:hover td{background:var(--blue-light);}
+.status-open{display:inline-block;background:#e8f5e9;color:#2e7d32;font-size:11px;font-weight:700;padding:3px 10px;border-radius:2px;}
+.status-soon{display:inline-block;background:#fff8e1;color:#f57f17;font-size:11px;font-weight:700;padding:3px 10px;border-radius:2px;}
+.apply-btn{color:var(--blue);font-size:12px;font-weight:700;text-decoration:none;}
+.apply-btn:hover{text-decoration:underline;}
+
+/* CURRICULUM */
+.curriculum-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.curriculum-day{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.curriculum-day-header{background:var(--blue);color:#fff;padding:12px 18px;font-size:13px;font-weight:700;}
+.curriculum-day-body{padding:16px 18px;}
+.curriculum-item{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:12px;color:var(--mid);}
+.curriculum-item:last-child{border-bottom:none;}
+.curriculum-dot{width:6px;height:6px;background:var(--blue-mid);border-radius:50%;margin-top:5px;flex-shrink:0;}
+
+/* FACILITY */
+.facility-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;}
+.facility-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:22px 16px;text-align:center;transition:border-color 0.2s;}
+.facility-card:hover{border-color:var(--blue);}
+.facility-icon{font-size:34px;margin-bottom:10px;}
+.facility-name{font-size:13px;font-weight:700;margin-bottom:5px;}
+.facility-desc{font-size:11px;color:var(--mid);line-height:1.6;}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.why-card{padding:24px 20px;border-left:3px solid var(--blue);background:#fff;border-radius:0 8px 8px 0;}
+.why-num{font-size:34px;font-weight:700;color:#b3e0f2;margin-bottom:8px;line-height:1;}
+.why-title{font-size:14px;font-weight:700;margin-bottom:8px;color:var(--dark);}
+.why-desc{font-size:12px;color:var(--mid);line-height:1.8;}
+
+/* ACCESS */
+.map-placeholder{background:#f0f0f0;border-radius:8px;height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--mid);font-size:13px;margin-bottom:20px;border:1px dashed var(--border);}
+.access-info{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.access-item{background:#fff;border:1px solid var(--border);border-radius:6px;padding:14px 16px;font-size:12px;color:var(--dark);}
+.access-item strong{display:block;color:var(--blue);font-size:11px;font-weight:700;margin-bottom:4px;}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,#003d5c,#0099CC);padding:60px 32px;text-align:center;color:#fff;}
+.cta-section h2{font-size:26px;font-weight:700;margin-bottom:12px;}
+.cta-section p{font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:32px;line-height:1.8;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.cta-tel{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.4);padding:14px 24px;border-radius:4px;font-size:14px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
+
+/* FOOTER */
+.footer{background:#111;color:rgba(255,255,255,0.45);padding:32px 32px;font-size:11px;line-height:2;}
+.footer-logo{font-size:18px;font-weight:700;color:var(--blue);margin-bottom:10px;font-family:'Arial Black',Arial,sans-serif;}
+.footer a{color:var(--blue-mid);text-decoration:none;}
+
+/* MOBILE */
+@media(max-width:768px){
+  .header{padding:0 16px;}
+  .nav{display:none;}
+  .hero{padding:48px 20px 44px;}
+  .hero h1{font-size:24px;}
+  .hero-stats{gap:20px;}
+  .section{padding:40px 20px;}
+  .curriculum-grid{grid-template-columns:1fr;}
+  .access-info{grid-template-columns:1fr;}
+  .trust-strip{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.2);}
+}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s,transform 0.6s;}
+.revealed{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- SEO 키워드 (검색엔진용) -->
+<div style="font-size:0;height:0;overflow:hidden;">
+경남 HACCP 교육장 부산 HACCP 교육 울산 HACCP 교육 세스코 HACCP 인증 교육기관 양산 식품위생교육 경상남도 HACCP 팀장과정 식품안전 의무교육
+</div>
+
+<div class="top-bar">
+  📌 세스코 부산경남사업소 HACCP 교육장 — 경남·부산·울산 지역 공식 인증 교육기관 · 2025년 하반기 일정 접수 중
+</div>
+
+<div class="header">
+  <div class="logo-area">
+    <span class="logo-cesco">CESCO</span>
+    <span class="logo-sub">식품안전교육센터<br>부산·경남·울산 HACCP 인증 교육기관</span>
+  </div>
+  <nav class="nav">
+    <a href="#courses">교육과정</a>
+    <a href="#schedule">교육일정</a>
+    <a href="#facility">교육시설</a>
+    <a href="#access">오시는길</a>
+    <a class="nav-cta" href="https://www.cescoacademy.co.kr/Main.cmd?cmd=academyUser" target="_blank">교육 신청하기 →</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🏛 식품의약품안전처 지정 · 세스코 공식 인증 교육장</div>
+  <h1>경남·부산·울산 지역<br><em>세스코 HACCP 교육</em><br>이제 가까운 곳에서 받으세요</h1>
+  <p class="hero-desc">
+    세스코 부산경남사업소가 HACCP 교육훈련기관으로 공식 인증받았습니다.<br>
+    식품제조업, 외식업, 급식시설 종사자 누구나 이용 가능합니다.
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num">30+</div>
+      <div class="label">년 식품위생 노하우</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">24</div>
+      <div class="label">경남·부산 관할 지점</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">100%</div>
+      <div class="label">정부 인증 교육과정</div>
+    </div>
+  </div>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://www.cescoacademy.co.kr/Main.cmd?cmd=academyUser" target="_blank">지금 바로 신청하기</a>
+    <a class="btn-outline" href="#schedule">교육 일정 보기 ↓</a>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item"><strong>식약처 지정</strong>공식 인증 교육기관</div>
+  <div class="trust-item"><strong>전문 강사진</strong>현장 전문가 직강</div>
+  <div class="trust-item"><strong>수료증 발급</strong>정부 공식 수료증</div>
+  <div class="trust-item"><strong>소규모 정원</strong>집중 교육 보장</div>
+  <div class="trust-item"><strong>컨설팅 연계</strong>HACCP 인증 취득 지원</div>
+</div>
+
+<!-- COURSES -->
+<section class="section" id="courses">
+  <div class="reveal">
+    <div class="blue-line"></div>
+    <div class="section-title">교육 과정</div>
+    <div class="section-sub">식품 관련 업종에 필요한 HACCP 교육과정을 한 곳에서 이수하세요.<br>의무교육부터 자격 취득과정까지 전 과정을 운영합니다.</div>
+    <div class="course-grid">
+      <div class="course-card">
+        <div class="course-icon">📋</div>
+        <div class="course-tag">의무교육</div>
+        <div class="course-name">HACCP 팀장과정</div>
+        <div class="course-info">· 대상: HACCP 적용업소 팀장<br>· 시간: 16시간 (2일)<br>· 주기: 매년 1회 이상<br>· 비용: 250,000원</div>
+      </div>
+      <div class="course-card">
+        <div class="course-icon">🏭</div>
+        <div class="course-tag">의무교육</div>
+        <div class="course-name">HACCP 종사자과정</div>
+        <div class="course-info">· 대상: 식품제조업 종사자<br>· 시간: 4시간<br>· 주기: 매년 1회 이상<br>· 비용: 문의</div>
+      </div>
+      <div class="course-card">
+        <div class="course-icon">🎓</div>
+        <div class="course-tag">전문과정</div>
+        <div class="course-name">선행요건 관리과정</div>
+        <div class="course-info">· 대상: 위생관리 담당자<br>· 시간: 16시간<br>· 현장 실습 포함<br>· 비용: 문의</div>
+      </div>
+      <div class="course-card">
+        <div class="course-icon">🔬</div>
+        <div class="course-tag">심화과정</div>
+        <div class="course-name">HACCP 시스템 구축</div>
+        <div class="course-info">· 대상: HACCP 신규 도입 업소<br>· 시간: 24시간<br>· 컨설팅 연계 가능<br>· 비용: 문의</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="section section-alt">
+  <div class="reveal">
+    <div class="blue-line"></div>
+    <div class="section-title">교육 커리큘럼 (HACCP 팀장과정)</div>
+    <div class="section-sub">2일 16시간 과정으로 HACCP의 기본 개념부터 실무 적용까지 체계적으로 학습합니다.</div>
+    <div class="curriculum-grid">
+      <div class="curriculum-day">
+        <div class="curriculum-day-header">1일차 · Day 1</div>
+        <div class="curriculum-day-body">
+          <div class="curriculum-item"><div class="curriculum-dot"></div>HACCP 개요 및 관련 법규</div>
+          <div class="curriculum-item"><div class="curriculum-dot"></div>선행요건 관리</div>
+          <div class="curriculum-item"><div class="curriculum-dot"></div>HACCP 관리계획 (준비 5단계)</div>
+          <div class="curriculum-item"><div class="curriculum-dot"></div>위해요소 분석 (생물학적 위해요소 개론)</div>
+        </div>
+      </div>
+      <div class="curriculum-day">
+        <div class="curriculum-day-header">2일차 · Day 2</div>
+        <div class="curriculum-day-body">
+          <div class="curriculum-item"><div class="curriculum-dot"></div>HACCP 관리계획 (원칙1) 위해요소분석</div>
+          <div class="curriculum-item"><div class="curriculum-dot"></div>HACCP 관리계획 (원칙2) 중요관리점 결정</div>
+          <div class="curriculum-item"><div class="curriculum-dot"></div>HACCP 관리계획 (원칙3) 한계기준 설정</div>
+          <div class="curriculum-item"><div class="curriculum-dot"></div>HACCP 관리계획 (원칙4) 모니터링 방법 설정</div>
+          <div class="curriculum-item"><div class="curriculum-dot"></div>HACCP 관리계획 (원칙5) 개선조치 방법 수립</div>
+          <div class="curriculum-item"><div class="curriculum-dot"></div>HACCP 관리계획 (원칙6) 검증절차 및 방법 수립</div>
+          <div class="curriculum-item"><div class="curriculum-dot"></div>HACCP 관리계획 (원칙7) 문서화 및 기록유지</div>
+          <div class="curriculum-item"><div class="curriculum-dot"></div>교육평가 Test</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="section" id="schedule">
+  <div class="reveal">
+    <div class="blue-line"></div>
+    <div class="section-title">2025년 하반기 교육 일정</div>
+    <div class="section-sub">아래 일정을 확인하고 세스코 아카데미에서 직접 신청하세요. 정원 초과 시 조기 마감됩니다.</div>
+    <div class="schedule-wrap">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>교육과정</th>
+            <th>교육일정</th>
+            <th>교육시간</th>
+            <th>장소</th>
+            <th>정원</th>
+            <th>접수상태</th>
+            <th>신청</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>HACCP 팀장과정</strong></td>
+            <td>일정 업데이트 예정</td>
+            <td>09:00–18:00 (2일)</td>
+            <td>세스코 양산 교육장</td>
+            <td>20명</td>
+            <td><span class="status-open">접수중</span></td>
+            <td><a class="apply-btn" href="https://www.cescoacademy.co.kr/Main.cmd?cmd=academyUser" target="_blank">신청 →</a></td>
+          </tr>
+          <tr>
+            <td><strong>HACCP 종사자과정</strong></td>
+            <td>일정 업데이트 예정</td>
+            <td>09:00–13:00 (1일)</td>
+            <td>세스코 양산 교육장</td>
+            <td>25명</td>
+            <td><span class="status-open">접수중</span></td>
+            <td><a class="apply-btn" href="https://www.cescoacademy.co.kr/Main.cmd?cmd=academyUser" target="_blank">신청 →</a></td>
+          </tr>
+          <tr>
+            <td><strong>선행요건 관리과정</strong></td>
+            <td>일정 업데이트 예정</td>
+            <td>09:00–18:00 (2일)</td>
+            <td>세스코 양산 교육장</td>
+            <td>15명</td>
+            <td><span class="status-soon">일정확인</span></td>
+            <td><a class="apply-btn" href="https://www.cescoacademy.co.kr/Main.cmd?cmd=academyUser" target="_blank">신청 →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:11px;color:#999;margin-top:12px;">※ 정확한 교육 일정은 세스코 아카데미(cescoacademy.co.kr)에서 확인하세요.</p>
+  </div>
+</section>
+
+<!-- FACILITY -->
+<section class="section section-alt" id="facility">
+  <div class="reveal">
+    <div class="blue-line"></div>
+    <div class="section-title">교육 시설 안내</div>
+    <div class="section-sub">세스코 양산 교육장은 쾌적한 학습 환경을 갖춘 정부 인증 시설입니다.</div>
+    <div class="facility-grid">
+      <div class="facility-card">
+        <div class="facility-icon">🏫</div>
+        <div class="facility-name">전용 강의실</div>
+        <div class="facility-desc">냉·난방 완비<br>멀티미디어 강의 시스템</div>
+      </div>
+      <div class="facility-card">
+        <div class="facility-icon">🔬</div>
+        <div class="facility-name">실습 공간</div>
+        <div class="facility-desc">현장 환경 재현<br>위생 실습 가능</div>
+      </div>
+      <div class="facility-card">
+        <div class="facility-icon">🅿️</div>
+        <div class="facility-name">무료 주차</div>
+        <div class="facility-desc">무료 주차 제공<br>대형차량 가능</div>
+      </div>
+      <div class="facility-card">
+        <div class="facility-icon">🍱</div>
+        <div class="facility-name">중식 제공</div>
+        <div class="facility-desc">1일 이상 과정<br>중식 제공</div>
+      </div>
+      <div class="facility-card">
+        <div class="facility-icon">📜</div>
+        <div class="facility-name">수료증 발급</div>
+        <div class="facility-desc">정부 공식 수료증<br>즉시 발급</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section">
+  <div class="reveal">
+    <div class="blue-line"></div>
+    <div class="section-title">세스코 HACCP 교육을 선택하는 이유</div>
+    <div class="section-sub">30년 식품위생 현장 경험이 교육에 그대로 담겨 있습니다.</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <div class="why-title">식약처 지정 공식 교육기관</div>
+        <div class="why-desc">식품의약품안전처 지정 HACCP 교육훈련기관으로 발급된 수료증은 법적 효력을 갖습니다.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <div class="why-title">현장 전문가 직강</div>
+        <div class="why-desc">이론이 아닌 실제 HACCP 인증 현장의 전문 강사가 직접 강의합니다. 사례 중심 교육.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <div class="why-title">경남권 유일 세스코 인증 교육장</div>
+        <div class="why-desc">부산·경남·울산 어디서도 접근 편리한 양산 위치의 세스코 공식 인증 교육기관.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <div class="why-title">교육 후 컨설팅 연계</div>
+        <div class="why-desc">HACCP 인증 취득부터 유지관리까지 세스코 식품안전 솔루션과 원스톱으로 연계 지원합니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section class="section section-alt" id="access">
+  <div class="reveal">
+    <div class="blue-line"></div>
+    <div class="section-title">오시는 길</div>
+    <div class="section-sub">세스코 부산경남사업소 HACCP 교육장 · 경남 양산시 소재</div>
+    <div class="map-placeholder">
+      📍 네이버 지도 / 카카오맵 임베드 위치<br>
+      <span style="font-size:11px;">(실제 주소 확정 후 지도 코드를 삽입해드립니다)</span>
+    </div>
+    <div class="access-info">
+      <div class="access-item">
+        <strong>📍 주소</strong>경남 양산시 (실제 주소 입력 필요)
+      </div>
+      <div class="access-item">
+        <strong>🚌 대중교통</strong>양산역 하차 후 버스 이용
+      </div>
+      <div class="access-item">
+        <strong>🚗 자가용</strong>남해고속도로 양산IC 근처
+      </div>
+      <div class="access-item">
+        <strong>📞 교육 문의</strong>055-○○○-○○○○
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>지금 바로 HACCP 교육을 신청하세요</h2>
+  <p>세스코 아카데미에서 간편하게 온라인 신청이 가능합니다.<br>정원 제한이 있으니 서둘러 신청하세요.</p>
+  <div class="cta-btns">
+    <a class="btn-primary" href="https://www.cescoacademy.co.kr/Main.cmd?cmd=academyUser" target="_blank">세스코 아카데미에서 신청하기 →</a>
+    <button class="cta-tel">📞 전화 문의: 055-○○○-○○○○</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">CESCO</div>
+  세스코 부산경남사업소 HACCP 교육장 · 경남 양산시 소재<br>
+  교육 신청 및 수료증 발급: <a href="https://www.cescoacademy.co.kr" target="_blank">세스코 아카데미 (cescoacademy.co.kr)</a><br>
+  세스코 식품안전: <a href="https://www.cescofood.co.kr" target="_blank">cescofood.co.kr</a> · 대표전화: 1588-1119<br><br>
+  본 페이지는 세스코 부산경남사업소의 공식 HACCP 교육 안내 페이지입니다.<br>
+  © 2025 CESCO Co., Ltd. All rights reserved.
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('revealed'); });
+}, {threshold: 0.08});
+reveals.forEach(r => observer.observe(r));
+</script>
+
+</body>
+</html>

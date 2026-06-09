@@ -40,9 +40,9 @@ body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
 .promo-btn{background:#fff;color:var(--red);padding:8px 20px;border-radius:4px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,#003d5c 0%,#005f8a 50%,#0099CC 100%);color:#fff;padding:64px 32px 52px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;right:-80px;top:-80px;width:380px;height:380px;border-radius:50%;border:48px solid rgba(41,171,226,0.15);}
-.hero::after{content:'';position:absolute;right:80px;bottom:-100px;width:220px;height:220px;border-radius:50%;border:32px solid rgba(41,171,226,0.1);}
+.hero{background:none;color:#fff;padding:0;position:relative;overflow:hidden;min-height:520px;}
+.hero-bg{position:absolute;inset:0;background-image:url('main-haccp.png');background-size:cover;background-position:center;z-index:0;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,30,60,0.82) 0%,rgba(0,60,100,0.65) 55%,rgba(0,100,160,0.3) 100%);}
 .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:20px;}
 .hero h1{font-size:32px;font-weight:700;line-height:1.4;margin-bottom:14px;letter-spacing:-0.02em;}
 .hero h1 em{color:#7dd8f5;font-style:normal;}
@@ -220,7 +220,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
 @media(max-width:768px){
   .header{padding:0 16px;}
   .nav{display:none;}
-  .hero{padding:44px 20px 40px;}
+  .hero{min-height:auto;}
+  .hero-inner{padding:44px 20px 40px;flex-direction:column;}
   .hero h1{font-size:22px;}
   .hero-stats{gap:18px;}
   .section{padding:36px 20px;}
@@ -237,9 +238,9 @@ body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
 }
 
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.5s,transform 0.5s;}
-.hero-inner{display:flex;align-items:center;gap:40px;position:relative;z-index:1;}
+.hero-inner{display:flex;align-items:center;gap:40px;position:relative;z-index:1;min-height:520px;padding:64px 40px;}
 .hero-left{flex:1;min-width:0;}
-.hero-right{flex:0 0 340px;display:flex;flex-direction:column;gap:12px;}
+.hero-right{flex:0 0 300px;display:flex;flex-direction:column;gap:12px;}
 .hero-photo-wrap{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.4);transform:rotate(1.5deg);}
 .hero-photo{width:100%;height:200px;object-fit:cover;display:block;}
 .hero-photo-badge{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.75));color:#fff;font-size:11px;font-weight:600;padding:20px 12px 8px;}
@@ -289,6 +290,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-badge">🏛 식품의약품안전처 지정 제10호 · 세스코 공식 HACCP 교육장</div>
@@ -308,10 +310,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-photo-wrap">
-        <img src="main-haccp.png" alt="세스코 HACCP 교육" class="hero-photo">
-        <div class="hero-photo-badge">🏫 세스코 HACCP 전문 교육기관</div>
-      </div>
+
       <div class="hero-mini-cards">
         <div class="hero-mini-card">
           <span class="hmc-name">경영자과정</span>

@@ -133,6 +133,18 @@ body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
 .step-lg .step-title{font-size:16px;}
 .step-lg .step-desc{font-size:14px;line-height:1.9;}
 .email-highlight{font-size:16px;font-weight:700;color:var(--blue-dark);}
+.apply-flow{display:flex;align-items:stretch;gap:0;margin-bottom:28px;flex-wrap:wrap;}
+.flow-step{flex:1;min-width:210px;background:#f0f8fc;border:2.5px solid var(--blue);border-radius:14px;padding:26px 20px;text-align:center;position:relative;}
+.flow-step.final{background:#fff4e5;border-color:var(--red);}
+.flow-num{width:52px;height:52px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;margin:0 auto 14px;box-shadow:0 3px 8px rgba(0,153,204,0.35);}
+.flow-step.final .flow-num{background:var(--red);box-shadow:0 3px 8px rgba(198,40,40,0.35);}
+.flow-title{font-size:19px;font-weight:800;margin-bottom:10px;color:var(--blue-dark);letter-spacing:-0.01em;}
+.flow-step.final .flow-title{color:var(--red);}
+.flow-desc{font-size:14px;color:var(--dark);line-height:1.9;}
+.flow-arrow{display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;color:var(--blue);padding:0 16px;flex:0 0 auto;}
+.email-box{display:inline-block;background:#fff3cd;border:1.5px solid #ffca28;color:#c62828;font-weight:800;font-size:17px;padding:4px 12px;border-radius:6px;margin-top:4px;}
+@media (max-width:760px){.apply-flow{flex-direction:column;} .flow-arrow{transform:rotate(90deg);padding:6px 0;}}
+
 
 /* INFO GRID */
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;}
@@ -779,21 +791,23 @@ body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
 
     <div class="form-wrap">
       <div class="form-section-title">☐ 신청 방법 안내</div>
-      <div class="steps" style="margin-bottom:28px;">
-        <div class="step step-lg">
-          <div class="step-num">1</div>
-          <div class="step-title">신청서 다운로드</div>
-          <div class="step-desc">아래에서 신청하실 과정의<br>신청서 파일을 다운로드하세요.</div>
+      <div class="apply-flow">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-title">📥 신청서 다운로드</div>
+          <div class="flow-desc">아래에서 신청하실 과정의<br>신청서 파일을 다운로드하세요</div>
         </div>
-        <div class="step step-lg">
-          <div class="step-num">2</div>
-          <div class="step-title">작성 및 서명</div>
-          <div class="step-desc">1페이지 신청내용 작성,<br>2페이지 개인정보 동의서에<br>서명해 주세요.</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-title">✍️ 작성 및 서명</div>
+          <div class="flow-desc">1페이지 신청내용 작성 후<br>2페이지 개인정보 동의서에<br><strong>서명</strong>해 주세요</div>
         </div>
-        <div class="step step-lg">
-          <div class="step-num">3</div>
-          <div class="step-title">이메일 회신</div>
-          <div class="step-desc">작성한 신청서를 스캔·촬영하여<br><span class="email-highlight">mike@cesco.co.kr</span>로<br>회신해 주세요.</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step final">
+          <div class="flow-num">3</div>
+          <div class="flow-title">📧 이메일 회신</div>
+          <div class="flow-desc">작성한 신청서를 촬영하여<br>아래 메일로 보내주시면<br>신청이 완료됩니다<br><span class="email-box">mike@cesco.co.kr</span></div>
         </div>
       </div>
 

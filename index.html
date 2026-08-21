@@ -977,5 +977,76 @@ window.addEventListener('scroll', function(){
   }
 });
 </script>
+
+<!-- 8월 과정 마감 안내 팝업 -->
+<div id="augClosedPopup" style="
+  display:flex;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+">
+  <div style="
+    background:#ffffff;
+    border-radius:16px;
+    max-width:420px;
+    width:100%;
+    padding:32px 28px 28px;
+    text-align:center;
+    position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,0.3);
+    font-family:inherit;
+  ">
+    <button onclick="document.getElementById('augClosedPopup').style.display='none'" style="
+      position:absolute;
+      top:12px;
+      right:14px;
+      background:none;
+      border:none;
+      font-size:22px;
+      line-height:1;
+      color:#999;
+      cursor:pointer;
+    " aria-label="닫기">×</button>
+
+    <div style="font-size:40px; margin-bottom:12px;">📢</div>
+
+    <h3 style="margin:0 0 12px; font-size:20px; color:#1a1a1a; font-weight:700;">
+      8월 과정 신청이 마감되었습니다
+    </h3>
+
+    <p style="margin:0 0 6px; font-size:15px; color:#444; line-height:1.6;">
+      <strong>경영자과정</strong> · <strong>정기과정</strong> · <strong>팀장과정</strong><br>
+      8월 일정은 신청이 모두 마감되었습니다.
+    </p>
+
+    <p style="margin:16px 0 20px; font-size:15px; color:#0a6b3f; font-weight:600; line-height:1.6;">
+      9월 일정으로 신청 부탁드립니다 🙏
+    </p>
+
+    <a href="#apply" onclick="document.getElementById('augClosedPopup').style.display='none'" style="
+      display:inline-block;
+      background:#0a6b3f;
+      color:#fff;
+      text-decoration:none;
+      padding:12px 28px;
+      border-radius:8px;
+      font-weight:600;
+      font-size:15px;
+    ">9월 일정 확인하기 →</a>
+  </div>
+</div>
+<script>
+  (function(){
+    var popup = document.getElementById('augClosedPopup');
+    if(!popup) return;
+    popup.addEventListener('click', function(e){
+      if (e.target === popup) popup.style.display = 'none';
+    });
+  })();
+</script>
 </body>
 </html>

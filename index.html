@@ -280,9 +280,55 @@ body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
 .hmc-tag{font-size:11px;background:rgba(0,153,204,0.8);color:#fff;padding:5px 12px;border-radius:4px;align-self:flex-start;font-weight:600;letter-spacing:0.02em;}
 @media(max-width:900px){.hero-inner{flex-direction:column;}.hero-right{flex:0 0 auto;width:100%;}.hero-photo{height:160px;}}
 .revealed{opacity:1;transform:none;}
+
+/* NOTICE POPUP */
+.notice-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px;}
+.notice-overlay.show{display:flex;animation:noticeFade 0.25s ease;}
+@keyframes noticeFade{from{opacity:0}to{opacity:1}}
+.notice-box{background:#fff;border-radius:14px;max-width:440px;width:100%;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.35);}
+.notice-head{background:linear-gradient(90deg,#b71c1c,var(--red));color:#fff;padding:16px 22px;font-size:16px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.notice-body{padding:24px 22px 8px;font-size:14px;line-height:1.9;color:var(--dark);}
+.notice-body .notice-main{font-size:17px;font-weight:700;margin-bottom:10px;letter-spacing:-0.01em;}
+.notice-body .notice-main em{color:var(--red);font-style:normal;}
+.notice-sched{background:var(--blue-light);border:1px solid #b3e0f2;border-radius:8px;padding:12px 14px;margin:14px 0 6px;font-size:13px;line-height:1.9;}
+.notice-sched strong{color:var(--blue-dark);}
+.notice-sub{font-size:12px;color:var(--mid);margin-top:8px;}
+.notice-btns{display:flex;gap:8px;padding:16px 22px 14px;}
+.notice-btns a,.notice-btns button{flex:1;text-align:center;padding:12px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;text-decoration:none;border:none;}
+.notice-btn-main{background:var(--blue);color:#fff;}
+.notice-btn-main:hover{background:var(--blue-dark);}
+.notice-btn-close{background:#eee;color:var(--dark);}
+.notice-foot{display:flex;justify-content:space-between;align-items:center;background:#f8f8f8;border-top:1px solid var(--border);padding:10px 22px;font-size:12px;color:var(--mid);}
+.notice-foot label{display:flex;align-items:center;gap:6px;cursor:pointer;}
+.notice-foot button{background:none;border:none;font-size:12px;color:var(--mid);cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
 </style>
 </head>
 <body id="top">
+
+<!-- 10월 과정 마감 안내 팝업 -->
+<div class="notice-overlay" id="noticePopup" role="dialog" aria-modal="true" aria-labelledby="noticeTitle">
+  <div class="notice-box">
+    <div class="notice-head" id="noticeTitle">📢 교육 신청 안내</div>
+    <div class="notice-body">
+      <div class="notice-main">10월 HACCP 교육과정은<br><em>모두 마감</em>되었습니다.</div>
+      신청하지 못하신 분들께서는<br>
+      <strong>11월 또는 12월 과정</strong>으로 신청 부탁드립니다.
+      <div class="notice-sched">
+        <strong>11월</strong> 팀장과정 18~19일 · 정기과정 17일<br>
+        <strong>12월</strong> 경영자 15일 · 팀장 16~17일 · 정기 15일 · 팀원 18일
+      </div>
+      <div class="notice-sub">※ 일정은 내부 사정에 따라 변경될 수 있습니다.<br>문의: 강기훈 매니저 010-3419-2071 / 최태환 매니저 010-7439-5758</div>
+    </div>
+    <div class="notice-btns">
+      <a class="notice-btn-main" href="#schedule" onclick="closeNotice(false)">11·12월 일정 보기</a>
+      <button class="notice-btn-close" type="button" onclick="closeNotice(false)">닫기</button>
+    </div>
+    <div class="notice-foot">
+      <label><input type="checkbox" id="noticeHide"> 오늘 하루 보지 않기</label>
+      <button type="button" onclick="closeNotice(true)">닫기 ✕</button>
+    </div>
+  </div>
+</div>
 
 <div style="font-size:0;height:0;overflow:hidden;">경남 HACCP 교육장 부산 HACCP 교육 울산 HACCP 교육 세스코 HACCP 인증 교육기관 양산 식품위생교육 HACCP 팀장과정 정기과정 경영자과정 팀원과정</div>
 
@@ -970,6 +1016,24 @@ window.addEventListener('scroll', function(){
     scrollBtn.classList.remove('visible');
   }
 });
+
+// 10월 마감 안내 팝업
+const NOTICE_KEY = 'haccpNoticeOct2026Hide';
+const noticePopup = document.getElementById('noticePopup');
+function closeNotice(useCheckbox){
+  const chk = document.getElementById('noticeHide');
+  if((useCheckbox !== false && chk && chk.checked) || (useCheckbox === false && chk && chk.checked)){
+    try{ localStorage.setItem(NOTICE_KEY, String(Date.now() + 24*60*60*1000)); }catch(e){}
+  }
+  noticePopup.classList.remove('show');
+}
+(function(){
+  let hideUntil = 0;
+  try{ hideUntil = parseInt(localStorage.getItem(NOTICE_KEY) || '0', 10); }catch(e){}
+  if(Date.now() > hideUntil){ noticePopup.classList.add('show'); }
+  noticePopup.addEventListener('click', function(e){ if(e.target === noticePopup) closeNotice(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeNotice(false); });
+})();
 </script>
 
 </body>

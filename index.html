@@ -292,6 +292,13 @@ body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
 .notice-body .notice-main em{color:var(--red);font-style:normal;}
 .notice-sched{background:var(--blue-light);border:1px solid #b3e0f2;border-radius:8px;padding:12px 14px;margin:14px 0 6px;font-size:13px;line-height:1.9;}
 .notice-sched strong{color:var(--blue-dark);}
+.notice-dday{display:inline-block;background:#fff;color:var(--red);font-size:13px;font-weight:900;padding:3px 10px;border-radius:4px;letter-spacing:0.02em;margin-left:auto;}
+.notice-deadline{text-align:center;border:2px solid var(--red);border-radius:8px;padding:14px 10px;margin-bottom:14px;background:#fff6f6;}
+.notice-deadline .nd-label{font-size:13px;font-weight:700;color:var(--red);}
+.notice-deadline .nd-date{font-size:22px;font-weight:900;color:var(--dark);letter-spacing:-0.02em;margin:2px 0;}
+.notice-deadline .nd-date em{color:var(--red);font-style:normal;}
+.notice-deadline .nd-count{font-size:13px;color:var(--mid);}
+.notice-deadline .nd-count b{color:var(--red);font-size:15px;}
 .notice-sub{font-size:12px;color:var(--mid);margin-top:8px;}
 .notice-btns{display:flex;gap:8px;padding:16px 22px 14px;}
 .notice-btns a,.notice-btns button{flex:1;text-align:center;padding:12px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;text-decoration:none;border:none;}
@@ -305,14 +312,18 @@ body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
 </head>
 <body id="top">
 
-<!-- 10월 과정 마감 안내 팝업 -->
+<!-- 11월 과정 접수 마감 임박 안내 팝업 -->
 <div class="notice-overlay" id="noticePopup" role="dialog" aria-modal="true" aria-labelledby="noticeTitle">
   <div class="notice-box">
-    <div class="notice-head" id="noticeTitle">📢 교육 신청 안내</div>
+    <div class="notice-head" id="noticeTitle">📢 교육 신청 안내 <span class="notice-dday" id="noticeDday">D-4</span></div>
     <div class="notice-body">
-      <div class="notice-main">10월 HACCP 교육과정은<br><em>모두 마감</em>되었습니다.</div>
-      신청하지 못하신 분들께서는<br>
-      <strong>11월 또는 12월 과정</strong>으로 신청 부탁드립니다.
+      <div class="notice-deadline">
+        <div class="nd-label">11월 HACCP 교육과정</div>
+        <div class="nd-date"><em>11월 10일(화)</em>까지 접수 마감!</div>
+        <div class="nd-count" id="noticeCount">마감까지 <b>4일</b> 남았습니다.</div>
+      </div>
+      아직 신청하지 않으셨다면<br>
+      <strong>지금 바로 신청해 주세요.</strong>
       <div class="notice-sched">
         <strong>11월</strong> 팀장과정 18~19일 · 정기과정 17일<br>
         <strong>12월</strong> 경영자 15일 · 팀장 16~17일 · 정기 15일 · 팀원 18일
@@ -320,7 +331,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--dark);}
       <div class="notice-sub">※ 일정은 내부 사정에 따라 변경될 수 있습니다.<br>문의: 강기훈 매니저 010-3419-2071 / 최태환 매니저 010-7439-5758</div>
     </div>
     <div class="notice-btns">
-      <a class="notice-btn-main" href="#schedule" onclick="closeNotice(false)">11·12월 일정 보기</a>
+      <a class="notice-btn-main" href="#schedule" onclick="closeNotice(false)">교육 일정 보고 신청하기</a>
       <button class="notice-btn-close" type="button" onclick="closeNotice(false)">닫기</button>
     </div>
     <div class="notice-foot">
@@ -1017,8 +1028,8 @@ window.addEventListener('scroll', function(){
   }
 });
 
-// 10월 마감 안내 팝업
-const NOTICE_KEY = 'haccpNoticeOct2026Hide';
+// 11월 접수 마감 안내 팝업 (D-DAY 자동 계산)
+const NOTICE_KEY = 'haccpNoticeNov2026Hide';
 const noticePopup = document.getElementById('noticePopup');
 function closeNotice(useCheckbox){
   const chk = document.getElementById('noticeHide');
@@ -1027,6 +1038,17 @@ function closeNotice(useCheckbox){
   }
   noticePopup.classList.remove('show');
 }
+(function(){
+  // 접수 마감일: 2026-11-10 (한국시간 기준, 당일 자정까지 접수)
+  const now = new Date(Date.now() + 9*3600*1000);               // KST
+  const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+  const diff = Math.round((Date.UTC(2026,10,10) - today) / 86400000);
+  const dd = document.getElementById('noticeDday');
+  const cnt = document.getElementById('noticeCount');
+  if(diff > 0){ dd.textContent = 'D-' + diff; cnt.innerHTML = '마감까지 <b>' + diff + '일</b> 남았습니다.'; }
+  else if(diff === 0){ dd.textContent = 'D-DAY'; cnt.innerHTML = '<b>오늘이 접수 마감일</b>입니다!'; }
+  else { dd.textContent = '마감'; cnt.innerHTML = '<b>11월 과정 접수가 마감되었습니다.</b><br>12월 과정으로 신청해 주세요.'; }
+})();
 (function(){
   let hideUntil = 0;
   try{ hideUntil = parseInt(localStorage.getItem(NOTICE_KEY) || '0', 10); }catch(e){}
